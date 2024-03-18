@@ -1,27 +1,46 @@
-# Week4
+# Week 4 - Challenge 2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+## Gentlemen pointing at you Angular
 
-## Development server
+Crea una aplicación Angular a partir de esta maqueta. Identifica qué datos del HTML actual son dinámicos y prográmalos para que se alimenten a partir del array proporcionado.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Utiliza los siguientes componentes: App, Info, Button (Select All), Gentleman
 
-## Code scaffolding
+Pista @Input: Utiliza el decorador @Input para pasar los datos de un componente a otro.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Opción: Crea un solo componente App.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```javascript
+[
+  {
+    id: 1,
+    name: "Bertin Osborne",
+    status: "Alive",
+    profession: "Youtuber",
+    twitter: "@osbourne",
+    picture: "bertin.jpg",
+    alternativeText: "Osbourne pointing at you",
+    selected: true,
+  },
+  {
+    name: "The Farytale",
+    status: "RIP",
+    profession: "Influencer",
+    twitter: "pending",
+    picture: "fary.jpg",
+    alternativeText: "The Fary pointing at you",
+    id: 2,
+    selected: false,
+  },
+  {
+    id: 3,
+    name: "Julius Churchs",
+    status: "Alive",
+    profession: "Java developer",
+    twitter: "@julius_churchs",
+    picture: "julio.jpg",
+    alternativeText: "Churchs pointing at you",
+    selected: true,
+  },
+];
+```
