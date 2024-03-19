@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 import { gentelmans } from './pointer.service';
-import { Gentelman } from './pointer';
 
 @Component({
   selector: 'isdi-main',
@@ -12,5 +11,5 @@ import { Gentelman } from './pointer';
   styleUrl: './main.component.css',
 })
 export class MainComponent {
-  gentelmans: Gentelman[] = gentelmans;
+  Gentelmans = gentelmans;
 }
