@@ -1,7 +1,8 @@
 export interface Gentelman {
   id: number;
   name: string;
-  status: string;
+  initial: string;
+  status: 'Alive' | 'RIP';
   profession: string;
   twitter: string;
   picture: string;

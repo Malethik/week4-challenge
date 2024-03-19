@@ -90,6 +90,94 @@
           }
         }
       }
+    },
+    "week4challeng3": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/week4challeng3",
+      "sourceRoot": "projects/week4challeng3/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/week4challeng3",
+            "index": "projects/week4challeng3/src/index.html",
+            "browser": "projects/week4challeng3/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/week4challeng3/tsconfig.app.json",
+            "assets": [
+              "projects/week4challeng3/src/favicon.ico",
+              "projects/week4challeng3/src/assets"
+            ],
+            "styles": [
+              "projects/week4challeng3/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "week4challeng3:build:production"
+            },
+            "development": {
+              "buildTarget": "week4challeng3:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "week4challeng3:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/week4challeng3/tsconfig.spec.json",
+            "assets": [
+              "projects/week4challeng3/src/favicon.ico",
+              "projects/week4challeng3/src/assets"
+            ],
+            "styles": [
+              "projects/week4challeng3/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {

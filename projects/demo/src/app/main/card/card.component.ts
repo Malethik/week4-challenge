@@ -11,6 +11,17 @@ import { gentelmans } from '../pointer.service';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  @Input()
-  gentelmans!: Gentelman;
+  gentelmans: Gentelman[] = [];
+
+  constructor() {
+    this.gentelmans = gentelmans();
+  }
+
+  /* selectItem(gentelmans: Gentelman) {
+    this.gentelmans = this.gentelmans.map((gent) => {
+      gent.id === gent.id;
+    });
+  } */
+
+  deleteItem() {}
 }
