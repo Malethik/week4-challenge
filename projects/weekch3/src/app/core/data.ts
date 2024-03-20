@@ -1,4 +1,4 @@
-export const dataChar = [
+export const dataChar = async () => [
   {
     isAlive: true,
     message: "You're all to die!",
