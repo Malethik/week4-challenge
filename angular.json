@@ -178,6 +178,94 @@
           }
         }
       }
+    },
+    "weekch3": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/weekch3",
+      "sourceRoot": "projects/weekch3/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/weekch3",
+            "index": "projects/weekch3/src/index.html",
+            "browser": "projects/weekch3/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/weekch3/tsconfig.app.json",
+            "assets": [
+              "projects/weekch3/src/favicon.ico",
+              "projects/weekch3/src/assets"
+            ],
+            "styles": [
+              "projects/weekch3/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "weekch3:build:production"
+            },
+            "development": {
+              "buildTarget": "weekch3:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "weekch3:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/weekch3/tsconfig.spec.json",
+            "assets": [
+              "projects/weekch3/src/favicon.ico",
+              "projects/weekch3/src/assets"
+            ],
+            "styles": [
+              "projects/weekch3/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "cli": {
