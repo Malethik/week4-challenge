@@ -1,0 +1,39 @@
+<fieldset>
+  <legend>STEP 1</legend>
+  <div>
+    <label #form (ngSubmit)="onSubmit($event)">
+      <div><span>Name:</span><input type="text" name="" ngModel /></div>
+      @if ( personalForm.form.controls["name"].touched &&
+      personalForm.form.controls["name"].invalid ) { @if
+      (personalForm.form.controls["name"].errors?.["required"]) {
+      <p>El nombre es obligatorio</p>
+      }}
+      <div><span>Last Name:</span><input type="text" name="" ngModel /></div>
+      @if ( personalForm.form.controls["surname"].touched &&
+      personalForm.form.controls["surname"].invalid ) { @if
+      (personalForm.form.controls["surname"].errors?.["required"]) {
+      <p>El apellido es obligatorio</p>
+      }}
+      <div>
+        <span>Email:<input type="email" name="" id="" ngModel /></span>
+      </div>
+      <label for="birthdate">Fecha de nacimiento:</label>
+      <div><input type="date" name="" id="" ngModel /></div>
+      <div><span>You age is:</span></div>
+      <div><span>Gender:</span></div>
+      <div>
+        <input type="radio" name="" value="male" ngModel />
+        <label for="option1">Hombre</label>
+        <input type="radio" name="" value="female" ngModel />
+        <label for="option1">Female</label>
+        <input type="radio" name="" value="other" ngModel />
+        <label for="option1">Other</label>
+        <input type="radio" name="" value="no tell" ngModel />
+        <label for="option1">I prefer no response</label>
+      </div>
+      <div><span>Do you want recive our newsletter?</span></div>
+      <div><input type="checkbox" name="" id="" ngModel /></div>
+    </label>
+  </div>
+  <input type="submit" value="Submit" />
+</fieldset>
