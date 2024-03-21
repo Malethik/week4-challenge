@@ -1,6 +1,6 @@
 <main>
-  @for (item of data; track $index) {
-  <app-card></app-card>
+  @for (item of characters; track $index) {
+  <app-card [character]="character" />
   }
 
   <p>home works!</p>

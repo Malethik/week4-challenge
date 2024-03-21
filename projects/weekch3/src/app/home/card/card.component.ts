@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { dataChar } from '../../core/data';
+import { Component, Input } from '@angular/core';
+
 import { Character } from '../../core/char';
 
 @Component({
@@ -10,16 +10,6 @@ import { Character } from '../../core/char';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  data: Character[] = [];
-  constructor() {
-    this.onLoad();
-  }
-
-  onLoad() {
-    dataChar().then((char) => {
-      this.data = char as Character[];
-      console.log(this.data);
-      console.log('char', char);
-    });
-  }
+  @Input({ required: true }) character: Character[] = [];
+  constructor() {}
 }

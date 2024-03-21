@@ -11,15 +11,15 @@ import { Character } from '../core/char';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
-  data: Character[] = [];
+  characters: Character[] = [];
   constructor() {
     this.onLoad();
   }
 
   onLoad() {
-    dataChar().then((char) => {
-      this.data = char;
-      console.log(this.data);
+    dataChar().then((characters) => {
+      this.characters = characters;
+      console.log(this.characters);
     });
   }
 }
