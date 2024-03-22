@@ -5,7 +5,7 @@ import { dataService } from '../../core/service/service.service';
   selector: 'app-display',
   standalone: true,
   imports: [],
-  template: `<span class="number"></span>`,
+  template: `<span class="number">{{ dialed.join('') }}</span>`,
   styles: ``,
 })
 export class DisplayComponent {

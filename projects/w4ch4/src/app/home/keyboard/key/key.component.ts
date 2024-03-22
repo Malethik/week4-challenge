@@ -6,17 +6,22 @@ import { dataService } from '../../../core/service/service.service';
   standalone: true,
   imports: [],
   template: `
-    <li>
-      <button class="key" (click)="pushNumber($event)">{{ number }}</button>
-    </li>
+    <button
+      class="key"
+      [class.big]="label.length > 1"
+      (click)="pushNumber($event)"
+    >
+      {{ label }}
+    </button>
   `,
   styles: ``,
 })
 export class KeyComponent {
-  @Input() number!: string;
-  constructor(private service: dataService) {}
+  @Input() label!: string;
+  constructor() {} //private service: dataService
 
   pushNumber(event: Event) {
-    this.service.addValue(this.number);
+    console.log('pushnumber', this.label);
+    // this.service.addValue(this.label);
   }
 }

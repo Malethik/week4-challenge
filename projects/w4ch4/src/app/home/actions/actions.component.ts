@@ -7,7 +7,16 @@ import { DisplayComponent } from '../display/display.component';
   selector: 'app-actions',
   standalone: true,
   imports: [ActionComponent, DisplayComponent],
-  template: ` <app-action /> `,
+  template: `
+    <div class="actions">
+      <app-display />
+      @for (label of labels; track $index) {
+      <app-action [label]="label" />
+      }
+    </div>
+  `,
   styles: ``,
 })
-export class ActionsComponent {}
+export class ActionsComponent {
+  labels = ['call', 'hang'];
+}

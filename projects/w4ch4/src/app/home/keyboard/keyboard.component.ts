@@ -9,16 +9,15 @@ import { KeyComponent } from './key/key.component';
     <div class="keyboard-container">
       <ol class="keyboard">
         @for (key of keys; track $index) {
-        <app-key [number]="key" />
+        <li>
+          <app-key [label]="key" />
+        </li>
         }
-
-        <li><button class="key big" (click)="deleteNum()">delete</button></li>
       </ol>
     </div>
   `,
   styles: ``,
 })
 export class KeyboardComponent {
-  keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  deleteNum() {}
+  keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'delete'];
 }

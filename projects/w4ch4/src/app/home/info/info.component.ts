@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-info',
   standalone: true,
   imports: [],
-  template: ` <span class="message">...</span> `,
+  template: ` <span class="message">{{ message }}</span> `,
   styles: ``,
 })
-export class InfoComponent {}
+export class InfoComponent {
+  message: string = '...';
+}
