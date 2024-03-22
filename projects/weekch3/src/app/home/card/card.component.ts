@@ -10,6 +10,9 @@ import { Character } from '../../core/char';
   styleUrl: './card.component.css',
 })
 export class CardComponent {
-  @Input({ required: true }) character: Character[] = [];
+  @Input({ required: true }) character!: Character;
   constructor() {}
+
+  kill() {}
+  talk() {}
 }

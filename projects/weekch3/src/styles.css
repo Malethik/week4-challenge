@@ -1,19 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
+
 body {
+  display: flex;
+
+  justify-content: center;
+  margin: 0;
   background-color: #b9540c;
   overflow: hidden;
 }
+
+li {
+  list-style: none;
+}
+
 .characters-list {
-  flex-wrap: nowrap;
-  max-width: 100%;
-  min-height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  margin-block-start: 20vh;
 }
 .character {
-  width: 20%;
   flex-basis: auto;
   flex-grow: 0;
 }
@@ -26,6 +36,9 @@ body {
   height: 200px;
 }
 .character__card {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   position: relative;
   border: none;
   background-color: #331c0e;
@@ -82,6 +95,7 @@ body {
   transition: all 0.3s;
   right: 100vw;
   left: -100vw;
+  z-index: 1;
 }
 .comunications.on {
   right: 0;
