@@ -1,19 +1,34 @@
+export type CharacterType = 'king' | 'fighter' | 'counselor' | 'squire';
+
 export interface Character {
-  isAlive: boolean;
-  message: string;
   name: string;
-  family: string;
+  house: string;
   age: number;
-  category: string;
+  isAlive: boolean;
+  type: CharacterType | '';
+  message: string;
+  yearsReigning?: number;
   weapon?: string;
-  skillLevel?: number;
-  reignYears?: number;
-  adviseTo?: {
-      isAlive: boolean
-      message: string,
-      name: string,
-      family:string,
-      age: number,
-      weapon: string,
-      skillLevel: number,
-}}
+  skillsRange?: number;
+  lord?: CharacterType;
+  master?: CharacterType;
+  serverRange?: number;
+}
+
+export interface King extends Character {
+  kingdomYears: number;
+}
+
+export interface Fighter extends Character {
+  weapon: string;
+  skillsRange: number;
+}
+
+export interface Counselor extends Character {
+  lord: CharacterType;
+}
+
+export interface Squire extends Character {
+  master: CharacterType;
+  serverRange: number;
+}
