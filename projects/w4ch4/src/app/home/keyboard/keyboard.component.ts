@@ -16,7 +16,11 @@ import { KeyComponent } from './key/key.component';
       </ol>
     </div>
   `,
-  styles: ``,
+  styles: `.keyboard {
+  width: 213px;
+  display: flex;
+  flex-wrap: wrap;
+}`,
 })
 export class KeyboardComponent {
   keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'delete'];

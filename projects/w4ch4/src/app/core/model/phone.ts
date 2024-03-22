@@ -1,4 +1,4 @@
-export interface phone {
-  keyboard: string;
+export interface Phone {
+  phoneNumber: string;
   isCalling: boolean;
 }

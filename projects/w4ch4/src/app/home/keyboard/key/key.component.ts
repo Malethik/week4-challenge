@@ -9,19 +9,49 @@ import { dataService } from '../../../core/service/service.service';
     <button
       class="key"
       [class.big]="label.length > 1"
-      (click)="pushNumber($event)"
+      (click)="onClickNumber()"
     >
       {{ label }}
     </button>
   `,
-  styles: ``,
+  styles: `.key {
+  border: none;
+  background-color: #383838;
+  color: #d2d2d2;
+  cursor: pointer;
+  width: 71px;
+  height: 71px;
+  position: relative;
+}
+.key:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 6px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+.key.big {
+  width: 142px;
+}
+.key:disabled {
+  cursor: default;
+  opacity: 0message;
+}
+.key:not(disabled):hover {
+  background-color: #454545;
+}`,
 })
 export class KeyComponent {
   @Input() label!: string;
-  constructor() {} //private service: dataService
+  constructor(private service: dataService) {}
 
-  pushNumber(event: Event) {
-    console.log('pushnumber', this.label);
-    // this.service.addValue(this.label);
+  onClickNumber() {
+    const value = this.label === 'delete' ? '' : this.label;
+    this.service.setPhoneNumber(value);
   }
 }

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { dataService } from '../../core/service/service.service';
 
 @Component({
   selector: 'app-info',
@@ -8,5 +9,14 @@ import { Component } from '@angular/core';
   styles: ``,
 })
 export class InfoComponent {
+  service = inject(dataService);
   message: string = '...';
+
+  constructor() {
+    this.service
+      .getPhone()
+      .subscribe((data) =>
+        data.isCalling ? 'calling' + data.phoneNumber : '...'
+      );
+  }
 }

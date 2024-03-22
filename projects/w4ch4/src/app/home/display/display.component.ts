@@ -5,16 +5,24 @@ import { dataService } from '../../core/service/service.service';
   selector: 'app-display',
   standalone: true,
   imports: [],
-  template: `<span class="number">{{ dialed.join('') }}</span>`,
-  styles: ``,
+  template: `<span class="number">{{ dialed }}</span>`,
+  styles: `.number {
+  background-color: #fff;
+  color: #454545;
+  padding: 5px 20px;
+  width: 150px;
+  border-radius: 30px;
+  text-align: center;
+  margin: 50px 0;
+  height: 31px;
+  
+}`,
 })
 export class DisplayComponent {
-  dialed: string[] = [];
-  constructor(private service: dataService) {}
-  calling() {
-    this.service;
+  dialed: string = '';
+  constructor(private service: dataService) {
+    this.service
+      .getPhone()
+      .subscribe((data) => (this.dialed = data.phoneNumber));
   }
-  /* display() {
-    const value = this.service.values;
-  } */
 }

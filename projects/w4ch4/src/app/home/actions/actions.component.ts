@@ -2,21 +2,26 @@ import { Component } from '@angular/core';
 
 import { ActionComponent } from './action/action.component';
 import { DisplayComponent } from '../display/display.component';
+import { dataService } from '../../core/service/service.service';
 
 @Component({
   selector: 'app-actions',
   standalone: true,
   imports: [ActionComponent, DisplayComponent],
   template: `
-    <div class="actions">
-      <app-display />
-      @for (label of labels; track $index) {
-      <app-action [label]="label" />
-      }
-    </div>
+    <app-display />
+    @for (label of labels; track $index) {
+    <app-action [label]="label" />
+    }
   `,
-  styles: ``,
+  styles: `:host{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}`,
 })
 export class ActionsComponent {
-  labels = ['call', 'hang'];
+  labels: ('Call' | 'Hang')[] = ['Call', 'Hang'];
 }
